@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<body ng-cloak="">
+<title>Application de gestion des produits</title>
+<meta name="Description" content="Product Manager Web Application created with AngularJS and PHP">
+<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/custom.css" type="text/css"/>
+<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css" type="text/css"/>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<div class="blog-masthead">
+    <div class="container">
+        <nav class="blog-nav">
+            <a class="blog-nav-item "  ng-class="{active: $state.includes('products')}" ui-sref="products.list">Produits</a>
+            <a class="blog-nav-item " ng-class="{active: $state.includes('categories')}" ui-sref="categories.list">Catégories</a>
+            <a class="blog-nav-item pull-right" href="#">Setting</a>
+            <a class="blog-nav-item pull-right" href="#">Profile</a>
+        </nav>
+    </div>
+</div>
+
+
+<div ng-class="container" ui-view></div>
+<!-- Libraries -->
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/jquery-ui/jquery-ui.js"></script>
+<script src="bower_components/lodash/dist/lodash.min.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<script src="bower_components/angular-route/angular-route.min.js"></script>
+<script src="bower_components/angular-animate/angular-animate.min.js"></script>
+
+
+<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+<script src="bower_components/angular-resource/angular-resource.min.js"></script>
+<script src="bower_components/restangular/src/restangular.js"></script>
+<!-- AngularJS custom codes -->
+<script src="app/app.js"></script>
+<script src="app/components/restModule/data.js"></script>
+<script src="app/components/directives/directives.js"></script>
+<script src="app/modules/products/product.js"></script>
+<script src="app/modules/products/list/product-controller.js"></script>
+<script src="app/modules/products/edit/product-edit.js"></script>
+<script src="app/modules/categories/categories.js"></script>
+<script src="app/modules/categories/list/categories-controller.js"></script>
+<script src="app/modules/categories/edit/category-edit.js"></script>
+<script src="app/components/restModule/categories/category-categories.js"></script>
+<script src="app/components/restModule/categories/category-categories-service.js"></script>
+<script src="app/components/restModule/products/product-products.js"></script>
+<script src="app/components/restModule/products/product-products-service.js"></script>
+<!-- Some Bootstrap Helper Libraries -->
+
+
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="js/ie10-viewport-bug-workaround.js"></script>
+</body>
+</html>
