@@ -1,11 +1,6 @@
-angular.module('category-categories')
+angular.module('categories')
     .factory('CategoryCategories',
     ['Restangular', function (Restangular) {
-        Restangular.extendModel('categories', function (model) {
 
-
-
-            return model;
-        });
-        return Restangular.service('categories');
+        return Restangular.service('category/categories');
     }]);

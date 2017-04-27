@@ -1,11 +1,6 @@
-angular.module('product-products')
+angular.module('products')
     .factory('ProductProducts',
     ['Restangular', function (Restangular) {
-        Restangular.extendModel('products', function (model) {
 
-
-
-            return model;
-        });
-        return Restangular.service('products');
+        return Restangular.service('product/products');
     }]);

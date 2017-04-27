@@ -11,9 +11,7 @@
 
     //list modules
     'products',
-    'categories',
-    'category-categories',
-    'product-products'
+    'categories'
 
 
   ])
@@ -22,8 +20,14 @@
      function (RestangularProvider ) {
 
        RestangularProvider
-         .setBaseUrl('api/v2')
-         //                .setDefaultRequestParams({accessToken: API_CONFIG.accessToken, tenantId: API_CONFIG.tenantId})
+         .setBaseUrl('http://localhost:1524/backend/web/backend/')
+         // .setDefaultHeaders({'X-Requested-With': 'XMLHttpRequest'})
+         .setDefaultRequestParams({accessToken: "45454554qsdkjqlsjQSLQDQKK"})
+         .setErrorInterceptor(function (response, deferred, responseHandler) {
+           if (response.status === 404) {
+
+           }
+         })
          .setFullResponse(true);
      }
    ])
