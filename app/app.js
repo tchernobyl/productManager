@@ -10,8 +10,10 @@
 
 
     //list modules
+
     'products',
-    'categories'
+    'categories',
+      'brands'
 
 
   ])
@@ -20,7 +22,7 @@
      function (RestangularProvider ) {
 
        RestangularProvider
-         .setBaseUrl('http://localhost:1524/backend/web/backend/')
+         .setBaseUrl('http://localhost:5001/serverApp/backend/web/backend/')
          // .setDefaultHeaders({'X-Requested-With': 'XMLHttpRequest'})
          .setDefaultRequestParams({accessToken: "45454554qsdkjqlsjQSLQDQKK"})
          .setErrorInterceptor(function (response, deferred, responseHandler) {

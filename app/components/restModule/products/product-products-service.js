@@ -4,3 +4,10 @@ angular.module('products')
 
         return Restangular.service('product/products');
     }]);
+
+angular.module('brands')
+    .factory('',
+        ['Restangular', function (Restangular) {
+
+            return Restangular.service('product/products');
+        }]);
