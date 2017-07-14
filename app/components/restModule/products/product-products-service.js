@@ -3,4 +3,11 @@ angular.module('products')
     ['Restangular', function (Restangular) {
 
         return Restangular.service('product/products');
-    }]);
+    }])
+
+
+    .factory('BrandBrandsTest',
+        ['Restangular', function (Restangular) {
+
+            return Restangular.service('brand/brands');
+        }]);
