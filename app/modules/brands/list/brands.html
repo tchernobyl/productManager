@@ -16,23 +16,25 @@
         </div>
         <div class="panel-body">
             <table class="table table-striped">
-                <tr ng-show="brands.length==0"><td style="vertical-align:middle;"><i class="fa fa-ban fa-3x"></i>&nbsp;No data found</td></tr>
-                <tr ng-hide="brands.length>-1"><td style="vertical-align:middle;"><i class="fa fa-cog fa-3x fa-spin"></i>&nbsp;Loading</td></tr>
+                <tr ng-show="listBrand.length==0"><td style="vertical-align:middle;"><i class="fa fa-ban fa-3x"></i>&nbsp;No data found</td></tr>
+                <tr ng-hide="listBrand.length>-1"><td style="vertical-align:middle;"><i class="fa fa-cog fa-3x fa-spin"></i>&nbsp;Loading</td></tr>
 
                 <tr>
                     <th >Name</th>
                     <th >Description</th>
-                    <th >Status</th>
+                    <th>actions</th>
+
                 </tr>
-                <tr ng-repeat="brand in products">
+                <tr ng-repeat="brand in listBrand">
                     <td>{{brand.name}}</td>
-                    <td>{{brands.description}}</td>
+                    <td>{{brand.description}}</td>
                     <td style="width:100px">
                         <div class="btn-group">
-                            <button type="button" class="btn btn-default fa fa-edit" ng-click="open(brand);"></button>
-                            <button type="button" class="btn btn-danger fa fa-trash-o" ng-click="deleteProduct(product);"></button>
+                            <button type="button" class="btn btn-default fa fa-edit" ng-click="openBrand(brand);"></button>
+                            <button type="button" class="btn btn-danger fa fa-trash-o" ng-click="deleteBrand(brand);"></button>
                         </div>
                     </td>
+
                 </tr>
             </table>
 

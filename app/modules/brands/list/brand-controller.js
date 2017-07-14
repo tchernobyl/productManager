@@ -26,4 +26,16 @@ angular.module('brands')
         $scope.content=test1;
 
 
-    });
+        $scope.deleteBrand=function(brand){
+            brand.remove();
+            console.log("delete object ",brand.name)
+        };
+
+        $scope.openBrand=function(brand){
+            console.log("show object ",brand.name)
+        }
+
+
+
+
+        });
