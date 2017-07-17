@@ -30,6 +30,7 @@ angular.module('products')
   $scope.NewProduct=_productEmpty;
   console.log($scope.NewProduct)
   $scope.open = function (p,size) {
+    console.log(p);
 
     var __original = angular.copy(p);
     var modalInstance = $modal.open({

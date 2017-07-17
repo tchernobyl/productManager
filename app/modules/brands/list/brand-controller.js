@@ -9,7 +9,16 @@ angular.module('brands')
                     url: '/list',
                     resolve:{
                         brandList:function(BrandBrandsTest){
-                            return BrandBrandsTest.getList();
+                            return BrandBrandsTest.getList()
+                                .then(function (result) {
+                                    /**
+                                     *
+                                     */
+                                return result;
+                            })
+                        },
+                        _brandEmpty:function(BrandBrandsTest){
+                            return BrandBrandsTest.one();
                         }
 
                     },
@@ -17,13 +26,15 @@ angular.module('brands')
                     controller: 'brandsController'
                 });
         }])
-    .controller('brandsController', function ($scope,brandList ) {
+    .controller('brandsController', function ($scope,brandList,_brandEmpty ,$modal) {
 
 
+        $scope.emptyBrand=_brandEmpty;
 
         $scope.listBrand=brandList.data;
         var test1=555;
         $scope.content=test1;
+
 
 
         $scope.deleteBrand=function(brand){
@@ -32,7 +43,21 @@ angular.module('brands')
         };
 
         $scope.openBrand=function(brand){
-            console.log("show object ",brand.name)
+
+            var modalInstance = $modal.open({
+                templateUrl: 'app/modules/brands/edit/brand-edit-modal.html',
+                controller: 'editBrandModalController',
+                // size: size,
+                resolve: {
+                    br: function () {
+                        return brand;
+                    },
+                    test1:function(){
+                        return 'bla bla bla '
+                    }
+                }
+            });
+
         }
 
 
