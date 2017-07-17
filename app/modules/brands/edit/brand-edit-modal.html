@@ -1,0 +1,37 @@
+<button type="button" class="close" ng-click="cancel();">
+    <i class="fa fa-times-circle-o" style="margin:10px;color:red;"></i>
+</button>
+<div class="modal-header">
+    <h3 ng-if="brand.id" class="modal-title">Edit brand [ID: {{brand.id}}]</h3>
+    <h3 ng-if="!brand.id" class="modal-title">Add brand </h3>
+</div>
+
+<div class="modal-body">
+
+    <form name="brand_form" class="form-horizontal" role="form" novalidate>
+        <form-element label="NAME" mod="product">
+            <input required type="text" class="form-control" name="name" placeholder="NAME" ng-model="brand.name" ng-disabled="brand.id" focus/>
+        </form-element>
+
+        <form-element label="Description" mod="product">
+            <input type="text" class="form-control" name="sh" placeholder="please fill the field" ng-model="brand.description"  focus/>
+        </form-element>
+
+        <form-element label="ShortDescription" mod="product">
+            <input type="text" class="form-control" name="d" placeholder="Short description " ng-model="brand.shortDescription"  focus/>
+        </form-element>
+        <div class="modal-footer">
+            <form-element label="">
+                <div class="text-right">
+                    <a class="btn btn-sm" ng-click="cancel()"><i class="ace-icon fa fa-reply"></i>Cancel</a>
+                    <button ng-click="saveOrUpdateBrand()"
+                            ng-disabled="brand_form.$invalid "
+                            class="btn btn-sm btn-primary"
+                            >
+                        <i class="ace-icon fa fa-check"></i>{{getButtonName()}}
+                    </button>
+                </div>
+            </form-element>
+        </div>
+    </form>
+</div>
